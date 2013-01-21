@@ -1,0 +1,55 @@
+{
+ "description":"A report for a virus containing a bot",
+ "type":"object",
+ "properties":{
+  "Reported-From" : {
+    "type":"email"
+  },
+  "Category" : {
+     "enum":["abuse"]
+  },
+  "Report-Type" : {
+     "enum":["?????"]
+  },
+  "Report-ID":{
+    "type":"string",
+    "format":"email"
+  },
+  "User-Agent" : {
+     "type":"string"
+   },
+   "Date" : {
+     "format":"date-time"
+   },
+   "Source" : {
+     "type":"string"
+   },
+   "Source-Type" : {
+     "type":"string",
+     "enum":["ipv6","ip-address"]
+   },
+   "Download-Link" : {
+     "type":"string", 
+     "format":"uri",
+     "optional":true
+   },
+   "MD5" : {
+     "type":"string",
+     "optional":true
+   },
+   "Antivirus-Result" : {
+     "type":"string",
+     "optional":true
+   },
+   "Attachment" : {
+     "type":"string", 
+     "optional":true
+   },
+   "Schema-URL" : {
+     "type":"string",
+     "format":"uri",
+     "optional":true
+   }
+  }
+}
+

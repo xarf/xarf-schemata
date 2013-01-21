@@ -1,0 +1,76 @@
+{"description":"A report schema which can be used to report different kinds of fraud",
+ "type":"object",
+ "properties":{
+   "Reported-From":{
+     "type":"string",
+     "format":"email"
+   },
+   "Report-ID":{
+     "type":"string",
+     "format":"email"
+   },
+   "Category":{
+     "type":"string",
+     "enum":["fraud"]
+   },
+   "Report-Type":{
+     "type":"string",
+     "enum":["phishing", "infected", "defacement", "scam", "spam", "other"]
+   },
+   "Service":{
+     "type":"string"
+   },
+   "Port":{
+     "type":"integer"
+   },
+   "User-Agent":{
+     "type":"string"
+   },
+   "Date":{
+     "type":"string",
+     "format":"date-time"
+   },
+   "Source":{
+     "description":"The ip address pointing to the fraud, e.g. ip address which hosts a phishing website",
+     "type":"string"
+   },
+   "Source-Type":{
+     "description":"Remark: uri is kept here for backward compatibility, use keyword URI instead",
+     "type":"string",
+     "enum":["ipv4","ipv6","ip-address","uri"]
+   },
+   "URI":{
+     "description":"Corresponding uri, e.g. URL of a phishing website",
+     "type":"string",
+     "format":"uri",
+     "optional":true
+   },
+   "Domain":{
+     "description":"An associated domain name",
+     "type":"string",
+     "optional":true
+   },
+   "Attachment":{
+     "description":"Any sort of evidence, e.g. email carrying out a phishing attack or any logfiles",
+     "type":"string",
+     "enum":["none","text/plain","message/rfc822","text/rfc822-headers"]
+   },
+   "Schema-URL":{
+     "type":"string",
+     "format":"uri"
+   },
+   "Version":{
+     "type":"number",
+     "optional":true
+   },
+   "Occurrences":{
+     "type":"integer",
+     "optional":true
+   },
+   "TLP":{
+     "type":"string",
+     "enum":["white","green","amber","red"],
+     "optional":true
+   }
+ }
+}

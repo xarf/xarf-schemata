@@ -1,0 +1,72 @@
+{"description":"An informational report about an ip address which is (de-)listed on a dnsbl",
+ "type":"object",
+ "properties":{
+   "Reported-From":{
+     "type":"string",
+     "format":"email"
+   },
+   "Report-ID":{
+     "type":"string",
+     "format":"email"
+   },
+   "Category":{
+     "type":"string",
+     "enum":["info"]
+   },
+   "Report-Type":{
+     "type":"string",
+     "enum":["dnsbl-listing","dnsbl-listed","dnsbl-delisted"],
+     "description":"dnsbl-listing: a listing for a given ip address was observed; dnsbl-listed: an ip address has been put on a dnsbl; dnsbl-delisted: an ip-address has been removed from a dnsbl"
+   },
+   "User-Agent":{
+     "type":"string"
+   },
+   "Date":{
+     "type":"string",
+     "format":"date-time",
+     "description":"Date when listing was observed, an ip-address/domain has been listed or delisted."
+   },
+   "Source":{
+     "type":"string",
+     "description":"the ip address or domain which is listed (or delisted)"
+   },
+   "Source-Type":{
+     "type":"string",
+     "enum":["ipv4","ipv6","ip-address","domain"]
+   },
+   "DNSBL-Record":{
+     "type":"string",
+     "format":"ip-address",
+     "optional":true,
+     "description":"DNS request answer which is usually something like 127.0.0.x"
+   },
+   "DNSBL":{
+     "type":"string",
+     "format":"uri",
+     "description":"DNSBL zone, e.g. zen.spamhaus.org"
+   },
+   "Attachment":{
+     "type":"string",
+     "enum":["text/plain"],
+     "description":"Any further information if available",
+     "optional":true
+   },
+   "Schema-URL":{
+     "type":"string",
+     "format":"uri"
+   },
+   "Version":{
+     "type":"number",
+     "optional":true
+   },
+   "Occurrences":{
+     "type":"integer",
+     "optional":true
+   },
+   "TLP":{
+     "type":"string",
+     "enum":["white","green","amber","red"],
+     "optional":true
+   }
+ }
+}

@@ -1,0 +1,9 @@
+Please see http://www.x-arf.org/ for further information.
+
+Versioning of files
+unstable: currently under development
+testing: if present, pre-release stable version for testing purposes
+x.x.x: stable and older stable versions 
+
+Please notice: Currently, the schemes are defined with JSON-schema draft 02.
+(http://tools.ietf.org/html/draft-zyp-json-schema-02) 
