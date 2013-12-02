@@ -9,4 +9,4 @@ Stable schemes are published on http://www.x-arf.org/schema/, e.g. http://www.x-
 
 Please notice: Currently, the schemes are defined with JSON-schema draft 02: http://tools.ietf.org/html/draft-zyp-json-schema-02) 
 
-If you want to contribute a new schema, change or extend an existing schema, feel free to fork and propose you changes.
+If you want to contribute a new schema, change or extend an existing schema, feel free to fork.
