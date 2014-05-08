@@ -1,6 +1,6 @@
 {
     "type": "object",
-    "description": "A report for systems which are infected with a bot",
+    "description": "A report for compromised accounts",
     "properties": {
         "Reported-From": {
             "format": "email",
