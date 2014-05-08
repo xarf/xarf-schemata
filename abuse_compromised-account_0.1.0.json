@@ -1,0 +1,64 @@
+{
+    "type": "object",
+    "description": "A report for systems which are infected with a bot",
+    "properties": {
+        "Reported-From": {
+            "format": "email",
+            "type": "string"
+        },
+        "Category": {
+            "enum": ["abuse"],
+            "type": "string"
+        },
+        "Report-Type": {
+            "enum": ["compromised-account"],
+            "type": "string"
+        },
+        "User-Agent": {
+            "description": "This field describes the software which generated this report email, this is not necessarily software used on the targeted system",
+            "type": "string"
+        },
+        "Report-ID": {
+            "format": "email",
+            "type": "string"
+        },
+        "Date": {
+            "format": "date-time",
+            "type": "string"
+        },
+        "Source-Type": {
+            "enum": ["ipv4", "ipv6", "ip-address", "uri", "domain"],
+            "type": "string"
+        },
+        "Source": {
+            "description": "This field describes the source-ip where the bot infection is hosted",
+            "type": "string"
+        },
+        "Attachment": {
+            "enum": ["none", "text/plain"],
+            "type": "string"
+        },
+        "Schema-URL": {
+            "format": "uri",
+            "type": "string",
+            "default": "http://www.x-arf.org/schema/abuse_compromised-account_0.1.0.json"
+        },
+        "Version": {
+            "optional": true,
+            "type": "number"
+        },
+        "TLP": {
+            "enum": ["white", "green", "amber", "red"],
+            "type": "string"
+        },
+        "Account-Type": {
+            "type": "string",
+            "description": "Format of the Account property",
+            "enum": ["email", "plain"]
+        },
+        "Account": {
+            "type": "string",
+            "description": "Identifier of a compromised account"
+        }
+    }
+}
