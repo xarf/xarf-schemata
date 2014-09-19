@@ -13,7 +13,10 @@
         "Category": {
             "enum": [
                 "abuse",
+                "fraud",
+                "auth",
                 "info",
+                "private",
                 "outdated",
                 "update"
             ],
@@ -71,6 +74,7 @@
         "Attachment": {
             "enum": [
                 "text/plain"
+                "application/json"
             ],
             "type": "string"
         },
