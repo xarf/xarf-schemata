@@ -1,86 +1,86 @@
 {
-    "type": "object", 
-    "description": "An Info report", 
+    "type": "object",
+    "description": "An Info report",
     "properties": {
+        "Reported-From": {
+            "type": "string",
+            "format": "email"
+        },
+        "Report-ID": {
+            "type": "string",
+            "format": "email"
+        },
         "Category": {
             "enum": [
-                "abuse", 
-                "info", 
-                "outdated", 
+                "abuse",
+                "info",
+                "outdated",
                 "update"
-            ], 
+            ],
             "type": "string"
-        }, 
-        "Version": {
-            "optional": true, 
-            "type": "number"
-        }, 
-        "Source-Type": {
-            "enum": [
-                "ipv4", 
-                "ipv6", 
-                "ip-address"
-            ], 
-            "type": "string"
-        }, 
+        },
         "Report-Type": {
             "enum": [
-                "login-attack", 
-                "info", 
-                "harvesting", 
-                "insert", 
-                "update", 
-                "delete", 
+                "login-attack",
+                "info",
+                "harvesting",
+                "insert",
+                "update",
+                "delete",
                 "hack-attack"
-            ], 
+            ],
             "type": "string"
-        }, 
-        "Destination-Type": {
-            "optional": true, 
-            "enum": [
-                "ipv6", 
-                "ip-address"
-            ], 
-            "type": "string"
-        }, 
+        },
         "Service": {
             "type": "string"
-        }, 
-        "Report-ID": {
-            "type": "string", 
-            "format": "email"
-        }, 
-        "Destination": {
-            "optional": true, 
-            "type": "string", 
-            "requires": "Destination-Type"
-        }, 
-        "Reported-From": {
-            "type": "string", 
-            "format": "email"
-        }, 
+        },
+        "Port": {
+            "type": "integer"
+        },
+        "User-Agent": {
+            "type": "string"
+        },
+        "Date": {
+            "type": "string",
+            "format": "date-time"
+        },
         "Source": {
             "type": "string"
-        }, 
-        "Schema-URL": {
-            "type": "string", 
-            "format": "uri"
-        }, 
+        },
+        "Source-Type": {
+            "enum": [
+                "ipv4",
+                "ipv6",
+                "ip-address"
+            ],
+            "type": "string"
+        },
+        "Destination": {
+            "optional": true,
+            "type": "string",
+            "requires": "Destination-Type"
+        },
+        "Destination-Type": {
+            "optional": true,
+            "enum": [
+                "ipv6",
+                "ip-address"
+            ],
+            "type": "string"
+        },
         "Attachment": {
             "enum": [
                 "text/plain"
-            ], 
+            ],
             "type": "string"
-        }, 
-        "Date": {
-            "type": "string", 
-            "format": "date-time"
-        }, 
-        "User-Agent": {
-            "type": "string"
-        }, 
-        "Port": {
-            "type": "integer"
+        },
+        "Schema-URL": {
+            "type": "string",
+            "format": "uri"
+        },
+        "Version": {
+            "optional": true,
+            "type": "number"
         }
     }
 }
