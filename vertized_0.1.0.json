@@ -1,0 +1,86 @@
+{
+    "type": "object",
+    "description":
+        "Format to report a spamvertized or nsvertized network abuse report",
+    "properties": {
+        "Reported-From": {
+            "type": "string",
+            "format": "email"
+        },
+        "Category": {
+            "enum": [
+                "abuse",
+                "fraud",
+                "auth",
+                "info",
+                "private",
+                "outdated",
+                "update"
+            ],
+            "type": "string"
+        },
+        "Report-Type": {
+            "enum": [
+                "nsvertized",
+                "spamvertized"
+            ],
+            "type": "string"
+        },
+        "User-Agent": {
+            "type": "string"
+        },
+        "Report-ID": {
+            "type": "string",
+            "format": "email"
+        },
+        "Date": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "Service": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "Source-Type": {
+            "enum": [
+                "ipv4",
+                "ipv6",
+                "ip-address"
+            ],
+            "type": "string"
+        },
+        "Attachment": {
+            "enum": [
+                "text/plain"
+            ],
+            "type": "string"
+        },
+        "Schema-URL": {
+            "type": "string",
+            "format": "uri"
+        },
+        "Version": {
+            "optional": true,
+            "type": "number"
+        },
+        "URL": {
+            "type": "string",
+            "format": "uri",
+            "description": "Vertized URL"
+        },
+        "DNS-Record-Type": {
+            "enum": [
+                "NS",
+                "A"
+            ],
+            "type": "string",
+            "description": "DNS record used to resolve record value"
+        },
+        "DNS-Record-Value": {
+            "type": "string",
+            "description": "DNS value resolved"
+        }
+    }
+}
