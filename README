@@ -5,7 +5,7 @@ unstable: currently under development
 testing: if present, pre-release stable version for testing purposes
 x.x.x: stable and older stable versions 
 
-Stable schemes are published on http://www.x-arf.org/schema/, e.g. http://www.x-arf.org/schema/abuse_malware-attack_0.1.4.json
+Stable schemes are published on http://www.x-arf.org/schemata.html, e.g. http://www.x-arf.org/schema/abuse_malware-attack_0.1.4.json
 
 Please notice: Currently, the schemes are defined with JSON-schema draft 02: http://tools.ietf.org/html/draft-zyp-json-schema-02) 
 
