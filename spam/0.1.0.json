@@ -9,11 +9,11 @@
         },
         "User-Agent": {
             "optional": true,
-            "type": "string"
+            "type": "string",
             "description": "indicates the name and version of the software program that generated the report.  The format of this field MUST follow section 14.43 of HTTP.  This field is for documentation only; there is no registry of user agent names or versions, and report receivers SHOULD NOT expect user agent names to belong to a known set"
         },
         "Version": {
-            "description": "indicates the version of specification that the report generator is using to generate the report. The version number in this specification is set to "1".
+            "description": "indicates the version of specification that the report generator is using to generate the report. The version number in this specification is set to \"1\"",
             "type": ["number", "string"],
             "optional": false
         },
@@ -42,7 +42,7 @@
             "type": "string",
             "format": "ip",
             "optional": true
-        }
+        },
         "Incidents": {
             "description": "contains an unsigned 32-bit integer indicating the number of incidents this report represents.  The absence of this field implies the report covers a single incident.",
             "type": "integer",
