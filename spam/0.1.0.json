@@ -1,2 +1,64 @@
 {
+    "description": "a report about a spam delivery! mostly directly extracted from rfc5965",
+    "type": "object",
+    "properties": {
+        "Feedback-Type": {
+            "optional": false,
+            "description": "contains the type of feedback report . This is intended to let report parsers distinguish among different types of reports",
+            "type": "string"
+        },
+        "User-Agent": {
+            "optional": true,
+            "type": "string"
+            "description": "indicates the name and version of the software program that generated the report.  The format of this field MUST follow section 14.43 of HTTP.  This field is for documentation only; there is no registry of user agent names or versions, and report receivers SHOULD NOT expect user agent names to belong to a known set"
+        },
+        "Version": {
+            "description": "indicates the version of specification that the report generator is using to generate the report. The version number in this specification is set to "1".
+            "type": ["number", "string"],
+            "optional": false
+        },
+        "Original-Envelope-Id": {
+            "description": "contains the envelope ID string used in the original SMTP transaction.",
+            "type": "string",
+            "optional": "true"
+        },
+        "Original-Mail-From": {
+            "description": "contains a copy of the email address used in the MAIL FROM portion of the original SMTP transaction. The format of this field is defined in section 4.1.2 of SMTP as \"Reverse-path\".",
+            "type": "string",
+            "optional": true
+        },
+        "Arrival-Date": {
+            "description": "indicates the date and time at which the original message was received by the Mail Transfer Agent (MTA) of the generating ADMD (Administrative Management Domain).  This field MUST be formatted as per section 3.3 of MAIL.",
+            "type": "string",
+            "format": "isodate"
+        },
+        "Reporting-MTA": {
+            "description": "indicates the name of the MTA generating this feedback report. This field is defined in section 2.2.2 of DSN, except that it is an optional field in this report.",
+            "type": "string",
+            "optional": "true"
+        },
+        "Source-IP": {
+            "description": "contains an IPv4 or IPv6 address of the MTA from which the original message was received.  Addresses MUST be formatted as per section 4.1.3 of [SMTP].",
+            "type": "string",
+            "format": "ip",
+            "optional": true
+        }
+        "Incidents": {
+            "description": "contains an unsigned 32-bit integer indicating the number of incidents this report represents.  The absence of this field implies the report covers a single incident.",
+            "type": "integer",
+            "optional": true
+        },
+        "Authentication-Results": {
+            "description": "indicates the result of one or more authentication checks run by the report generator.  The format of this field is defined in AUTH-RESULTS.  Report receivers should note that this field only indicates an assertion made by the report generator.",
+            "type": "array",
+            "items": {"type": "string"},
+            "optional": true
+        },
+        "Original-Rcpt-To": {
+            "description": "includes a copy of the email address used in the RCPT TO portion of the original SMTP transaction. The format of this field is a \"Reverse-path\" defined in section 4.1.2 of that memo. This field SHOULD be repeated for every SMTP recipient seen by the report generator.",
+            "type": "array",
+            "items": {"type": "string", "format": "email"},
+            "optional": true
+        }
+    }
 }
