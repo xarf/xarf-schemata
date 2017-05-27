@@ -55,11 +55,11 @@
             "format":"uri",
             "optional":true
         },
-	"Bot-Name":{
-	     "type":"string"
-	},
-	"Malware-MD5":{
-     	     "type":"string",
+        "Bot-Name":{
+            "type":"string"
+        },
+        "Malware-MD5":{
+          "type":"string",
              "optional":true
          },
         "Attachment":{
