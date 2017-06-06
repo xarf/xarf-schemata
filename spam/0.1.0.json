@@ -59,6 +59,11 @@
             "type": "array",
             "items": {"type": "string", "format": "email"},
             "optional": true
+        },
+        "Source-Port": {
+            "description": "contains the TCP port used by the issuing machine for the delivery of the spam",
+            "type": "integer",
+            "optional": true
         }
     }
 }
