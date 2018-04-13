@@ -1,0 +1,98 @@
+{
+    "description":"A report for systems which are infected with a bot",
+    "type":"object",
+    "properties":{
+        "Reported-From":{
+            "type":"string",
+            "format":"email"
+        },
+        "Report-ID":{
+            "type":"string",
+            "format":"email"
+        },
+        "Category":{
+            "type":"string",
+            "enum":["abuse"]
+        },
+        "Report-Type":{
+            "type":"string",
+            "enum":["bot-infection"]
+        },
+        "Destination":{
+            "description":"This field describes the destination-ip of the ressource the bot contacted",
+            "type":"string",
+            "optional":true,
+            "requires":"Destination-Type"
+        },
+        "Destination-Type":{
+            "type":"string",
+            "enum":["ipv4","ipv6","ip-address"],
+            "optional":true
+        },
+        "Destination-Port":{
+            "description":"This field describes the destination-port to which the bot infected host communicated",
+            "type":"integer",
+            "optional":true
+        },
+        "Destination-Domain":{
+            "description":"This field describes the domain the bot infected host communicated with",
+            "type":"string",
+            "optional":true
+        },
+        "User-Agent":{
+            "description":"This field describes the software which generated this report email, this is not necessarily software used on the targeted system",
+            "type":"string"
+        },
+        "Date":{
+            "type":"string",
+            "format":"date-time"
+        },
+        "Source":{
+            "description":"This field describes the source-ip where the bot infection is hosted",
+            "type":"string"
+        },
+        "Source-Type":{
+            "type":"string",
+            "enum":["ipv4","ipv6","ip-address"]
+        },
+        "Source-Port":{
+            "description":"This field describes the source-port from which the bot infected host communicated",
+            "type":"integer",
+            "optional":true
+        },
+        "Feedback-Link":{
+            "description":"May provide a feedback link for the receiver",
+            "type":"string", 
+            "format":"uri",
+            "optional":true
+        },
+        "Bot-Name":{
+            "type":"string"
+        },
+        "Malware-MD5":{
+          "type":"string",
+             "optional":true
+         },
+        "Attachment":{
+            "type":"string",
+            "enum":["none","text/plain"]
+        },
+        "Schema-URL":{
+            "type":"string",
+            "format":"uri"
+        },
+        "Version":{
+            "type":"number",
+            "optional":true
+        },
+        "Occurrences":{
+            "type":"integer",
+            "optional":true
+        },
+        "TLP":{
+            "type":"string",
+            "enum":["white","green","amber","red"],
+            "optional":true
+        }
+    }
+}
